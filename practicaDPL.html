@@ -4,6 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Práctica DPL</title>
+    <script>
+        function comprobar_DNI() {
+        // Recogemos la entrada de datos
+        var DNI = document.getElementById('DNI')
+        // Declaramos array
+        var array_letras = new array("T", "R", "W", "A", "G", "M", "Y", "F", "P", "D",
+        "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E");
+        // Declaramos variables
+        if (DNI[0] == "X" || DNI[0] == "Y" || DNI[0] == "Z") {
+            switch (DNI[0]) {
+                case "X":
+                    DNI[0] = "0";
+                    break;
+                case "Y":
+                    DNI[0] = "1";
+                    break;
+                case "Z":
+                    DNI[0] = "2";
+                    break;
+                default:
+                    console.log("Error");
+            }
+            var numeros = parseInt(DNI);
+            var letra = substr(DNI, -1);
+        } else {
+            var numeros = parseInt(DNI);
+            var letra = substr(DNI, -1);
+        }
+        // Sacamos el resto
+        var numero = numeros%23;
+        // Comprobamos
+        if (array_letras[numero] === letra) {
+            console.log("letra correcta");
+            return 0;
+        } else {
+            console.log("letra incorrecta");
+            return 1;
+        }
+    }
+    </script>
 </head>
 
 <body>
